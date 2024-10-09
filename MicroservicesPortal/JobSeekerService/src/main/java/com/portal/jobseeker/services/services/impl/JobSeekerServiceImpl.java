@@ -34,16 +34,26 @@ public class JobSeekerServiceImpl implements JobSeekerService {
     @Override
     public JobSeeker getByJobseekerId(int jobseekerId) {
 
-
-
         return jobseekerRepo.getByJobseekerId(jobseekerId);
     }
 
     @Override
     public JobSeeker saveJobseeker(JobSeeker jobseeker) {
 
+        jobseeker.setJobSeekerId(jobSeekerIdGenerator());
+
         return jobseekerRepo.save(jobseeker);
     }
+
+    public String jobSeekerIdGenerator(){
+
+        String maxJobId = jobseekerRepo.getMaxJobSeekerId();
+
+        return maxJobId;
+    }
+
+
+
 
     @Override
     public void deleteByJobseekerId(int jobseekerId) {

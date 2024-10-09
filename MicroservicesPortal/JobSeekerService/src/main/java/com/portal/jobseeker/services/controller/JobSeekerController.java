@@ -1,6 +1,7 @@
 package com.portal.jobseeker.services.controller;
 
 import com.portal.jobseeker.services.model.JobSeeker;
+import com.portal.jobseeker.services.model.Jobs;
 import com.portal.jobseeker.services.repository.JobSeekerRepo;
 import com.portal.jobseeker.services.services.JobSeekerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,6 @@ public class JobSeekerController {
 
         return ResponseEntity.ok(jobSeekerService.saveJobseeker(jobSeeker));
     }
+
 
 }

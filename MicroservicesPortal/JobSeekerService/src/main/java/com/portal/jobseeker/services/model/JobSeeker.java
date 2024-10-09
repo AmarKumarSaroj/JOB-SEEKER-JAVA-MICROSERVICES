@@ -14,26 +14,23 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "Jobseeker_details")
+@Table(name = "JobseekerDetails")
 public class JobSeeker {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int jobSeekerId;
+    @Column(name = "jobSeekerId")
+    private String jobSeekerId;
 
-//    private String emailId;
-//    private String mobileNumber;
+    @Column(name = "firstName",nullable = false)
     private String firstName;
+
+    @Column(name = "middleName")
     private String middleName;
+
+    @Column(name = "lastName")
     private String lastName;
 
-    @OneToMany(mappedBy = "jobSeekerId",cascade = CascadeType.ALL)
-    private ArrayList<JSQualification> qualification = new ArrayList<>();
-
-    private String designation;
-    private boolean maritalStatus; // corrected spelling from 'merried'
-    private String skills;
-    private String totalExperience;
-
+    @Column(name = "password",nullable = false)
+    private String password;
 
 }
